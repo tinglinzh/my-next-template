@@ -32,14 +32,16 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ fontFamily: `-apple-system, ${geistSans.style.fontFamily},${geistMono.className},BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,sans-serif` }}
+        className="antialiased"
       >
         <main>{children}</main>
         <Toaster
           position="top-right"
           richColors
+          className="!font-[inherit]"
           toastOptions={{
-            className: '!rounded-2xl !border-none !bg-white/15 backdrop-blur-md [--success-text:#04d468]',
+            className: 'font-[inherit] !rounded-2xl !border-none !bg-white/15 backdrop-blur-md [--success-text:#04d468]',
           }}
         />
       </body>
