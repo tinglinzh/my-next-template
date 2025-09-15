@@ -79,7 +79,8 @@
     "less",
     "scss",
     "pcss",
-    "postcss"
+    "postcss",
+    "tailwindcss"
   ],
   "WillLuke.nextjs.hasPrompted": true,
   "files.associations": {
