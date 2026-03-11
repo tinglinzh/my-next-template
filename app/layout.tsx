@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, JetBrains_Mono, Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
 import './globals.css'
 import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
@@ -27,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth", "font-mono", jetbrainsMono.variable)}>
+    <html lang="en" className={cn("scroll-smooth", jetbrainsMono.variable, "font-sans", inter.variable)}>
       <head>
         <meta
           name="viewport"
