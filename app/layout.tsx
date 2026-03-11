@@ -1,22 +1,10 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, JetBrains_Mono, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
 import './globals.css'
 import { cn } from "@/lib/utils";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: 'My Next.js template',
@@ -29,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth", jetbrainsMono.variable, "font-sans", inter.variable)}>
+    <html lang="en" className={cn("scroll-smooth", "font-sans", inter.variable)}>
       <head>
         <meta
           name="viewport"
@@ -37,16 +25,16 @@ export default function RootLayout({
         />
       </head>
       <body
-        style={{ fontFamily: `-apple-system, ${geistSans.style.fontFamily},${geistMono.className},BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,sans-serif` }}
+        style={{ fontFamily: `-apple-system, ${inter.style.fontFamily}, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,sans-serif` }}
         className="antialiased"
       >
         <main>{children}</main>
         <Toaster
           position="top-right"
           richColors
-          className="!font-[inherit]"
+          className="font-[inherit]!"
           toastOptions={{
-            className: 'font-[inherit] !rounded-2xl !border-none !bg-white/15 backdrop-blur-md [--success-text:#04d468]',
+            className: 'font-[inherit] rounded-2xl! border-none! bg-white/15! backdrop-blur-md [--success-text:#04d468]',
           }}
         />
       </body>
